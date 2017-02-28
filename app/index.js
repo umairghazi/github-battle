@@ -1,11 +1,13 @@
-var USER_DATA = {
-  name: 'Tyler McGinnis',
-  username: 'tylermcginnis',
-  image: 'https://avatars0.githubusercontent.com/u/2933430?v=3$s=460'
-}
+// var USER_DATA = {
+//   name: 'Umair',
+//   username: 'umairghazi',
+//   image: 'https://avatars2.githubusercontent.com/u/2611140?v=3&s=460'
+// }
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Routes = require('./config/routes');
+
 
 /*
   Focused
@@ -15,16 +17,21 @@ var ReactDOM = require('react-dom');
   Testable
 */
 
-var ProfilePic = React.createClass({
+/*var ProfilePic = React.createClass({
   render: function () {
     return <img src={this.props.imageUrl} style={{height: 100, width: 100}}></img>
   }
 });
 
 var Link = React.createClass({
+  changeURL: function(){
+    window.location.replace(this.props.href)
+  },
   render: function() {
     return (
-      <span>
+      <span
+        style={{color:'blue', cursor: 'pointer'}}
+        onClick={this.changeURL}>
         {this.props.children}
       </span>
     )
@@ -59,7 +66,7 @@ var Avatar = React.createClass({
       </div>
     );
   }
-});
+});*/
 
 
-ReactDOM.render(<Avatar user={USER_DATA} />, document.getElementById('app'));
+ReactDOM.render(Routes, document.getElementById('app'));
